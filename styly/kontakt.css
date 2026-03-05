@@ -107,7 +107,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-
+@media (max-width: 600px) {
+  .formular-radek {grid-template-columns: 1fr;}
+}
 .formular-skupina {
   margin-bottom: 1.1rem;
 }
