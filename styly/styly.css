@@ -240,7 +240,11 @@ Auto úvod
   overflow: hidden;
   gap: 0;
 }
-
+@media (max-width: 900px) {
+  .partneri-pruh{  flex-direction: column;  }
+  .ticker-obal{padding: 25px;  }
+  
+}
 .partneri-nadpis {
   font-size: 0.68rem;
   font-weight: 700;
@@ -404,6 +408,11 @@ Auto úvod
   line-height: 1;
   margin-bottom: 1.2rem;
   transition: opacity 0.3s;
+}
+@media (max-width:900px) {
+    .sluzba-cislo {
+      opacity: 1;
+    }
 }
 
 .sluzba-karta:hover .sluzba-cislo { opacity: 0.8; }

@@ -20,6 +20,9 @@
   .kontakt-mrizka{
     grid-template-columns: auto;
   }
+  .kontakt-sekce {
+    padding: 2rem;
+  }
 }
 .kontakt-info h2 {
   font-family: 'DM Serif Display', serif;
