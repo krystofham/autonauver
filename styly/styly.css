@@ -88,15 +88,6 @@
   flex-wrap: wrap;
 }
 /* ============================================================
-Auto úvod
-   ============================================================ */
-@media (max-width: 900px){
-  .auto-pozadi{
-    display: none;
-  }
-}
-
-/* ============================================================
    TLAČÍTKA
    ============================================================ */
 .tlacitko-hlavni {
@@ -767,11 +758,6 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   flex-shrink: 0;
   transition: opacity 0.2s, transform 0.2s;
 }
-@media (max-width: 600px) {
-  .partneri-fb {
-    display: none;
-  }
-}
 .partneri-fb:hover {
   opacity: 0.88;
   transform: scale(1.04);
@@ -784,12 +770,10 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   padding: 6rem 4rem;
   background: var(--bila);
 }
-
 .cnb-vnitrni {
   max-width: 1400px;
   margin: 0 auto;
 }
-
 .cnb-popis {
   font-size: 0.98rem;
   color: var(--strední);
@@ -798,24 +782,25 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   margin-bottom: 3rem;
 }
 
-.cnb-mrizka {
+/* ← přejmenováno z cnb-mrizka na cnb-karty */
+.cnb-karty {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-
 .cnb-karta {
   background: var(--kremova);
   border: 1px solid var(--okraj-jemny);
   border-radius: var(--r-velky);
   padding: 2rem;
   display: flex;
-  gap: 1.2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-
 .cnb-karta::before {
   content: '';
   position: absolute;
@@ -823,117 +808,58 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   height: 3px;
   background: var(--g-hlavni);
 }
-
-.cnb-karta--info::before {
-  background: linear-gradient(135deg, #f6ad55, #ed8936);
-}
-
 .cnb-karta:hover {
   transform: translateY(-4px);
   box-shadow: var(--stín-hover);
   border-color: var(--okraj);
 }
 
-.cnb-ikona {
-  width: 2.8rem;
-  height: 2.8rem;
-  min-width: 2.8rem;
-  border-radius: 0.7rem;
-  background: var(--g-hlavni);
+/* ikona = wrapper s textem a obrázkem */
+.cnb-karta-ikona {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(124,58,237,0.3);
+  gap: 0.8rem;
+  width: 100%;
 }
-
-.cnb-ikona--zluta {
-  background: linear-gradient(135deg, #f6ad55, #ed8936);
-  box-shadow: 0 4px 14px rgba(237,137,54,0.35);
-}
-
-.cnb-ikona svg { width: 1.2rem; height: 1.2rem; }
-
-.cnb-karta-obsah { flex: 1; min-width: 0; }
-
-.cnb-karta-stitek {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--akcent);
-  margin-bottom: 0.5rem;
-}
-
-.cnb-karta-obsah h3 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1rem;
-  color: var(--cerna);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-}
-
-.cnb-karta-obsah p {
-  font-size: 0.82rem;
-  color: var(--strední);
-  line-height: 1.65;
-  margin-bottom: 0.8rem;
-}
-
-.cnb-ico {
-  display: inline-block;
-  font-size: 0.72rem;
+.cnb-karta-ikona p {
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--cerna);
-  background: var(--bila);
-  border: 1px solid var(--okraj);
-  border-radius: 2rem;
-  padding: 0.2rem 0.65rem;
-  margin-bottom: 0.8rem;
-  letter-spacing: 0.05em;
-}
-
-.cnb-odkaz {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--akcent);
-  text-decoration: none;
   letter-spacing: 0.02em;
-  transition: color 0.2s, gap 0.2s;
 }
-
-.cnb-odkaz:hover {
-  color: var(--akcent-ruzovy);
-  gap: 0.6rem;
+.cnb-karta-ikona img {
+  width: 100%;
+  border-radius: var(--r-stredni);
+  border: 1px solid var(--okraj-jemny);
+  box-shadow: var(--stín-karta);
+  display: block;
+  object-fit: cover;
+  transition: box-shadow 0.3s;
+}
+.cnb-karta:hover .cnb-karta-ikona img {
+  box-shadow: var(--stín-hover);
 }
 
 @media (max-width: 1100px) {
-  .cnb-mrizka { grid-template-columns: 1fr 1fr; }
+  .cnb-karty { grid-template-columns: 1fr 1fr; }
 }
-
 @media (max-width: 900px) {
   .cnb-sekce { padding: 4rem 1.5rem; }
-  .cnb-mrizka { grid-template-columns: 1fr; }
-  .cnb-karta { flex-direction: column; }
+  .cnb-karty { grid-template-columns: 1fr; }
 }
 
 /* Dark mode CNB */
 :root.tmavy-rezim .cnb-sekce { background: var(--bila); }
 :root.tmavy-rezim .cnb-karta { background: #16112b; border-color: rgba(168,85,247,0.12); }
-:root.tmavy-rezim .cnb-karta-obsah h3 { color: var(--cerna); }
-:root.tmavy-rezim .cnb-ico { background: #0d0a1a; color: var(--cerna); }
-
+:root.tmavy-rezim .cnb-karta-ikona p { color: var(--cerna); }
+:root.tmavy-rezim .cnb-karta-ikona img { border-color: rgba(168,85,247,0.15); }
 
 .proc-my-titulek { color: #fdf9ff !important; }
 :root.tmavy-rezim .proc-my-titulek { color: #fdf9ff !important; }
 :root.tmavy-rezim .proc-my-leva p { color: rgba(240,234,255,0.65) !important; }
 :root.tmavy-rezim .proc-my-polozka p { color: rgba(240,234,255,0.5) !important; }
 :root.tmavy-rezim .proc-my-polozka h3 { color: #fdf9ff !important; }
-
-
-
 /* ============================================================
    KARTY SLUŽEB — odkaz verze
    ============================================================ */
@@ -985,7 +911,7 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
 }
 
 .cnb-vnitrni {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -1006,20 +932,23 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   margin-bottom: 3rem;
 }
 
+/* KARTY — flexbox */
 .cnb-karty {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 
 .cnb-karta {
+  flex: 1 1 280px; /* roste, ale min 280px */
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: var(--r-velky);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   transition: background 0.25s, border-color 0.25s, transform 0.25s;
 }
 
@@ -1029,73 +958,48 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   transform: translateY(-4px);
 }
 
-.cnb-karta--info .cnb-karta-ikona {
-  background: rgba(236,72,153,0.2);
-  color: #ec4899;
-  border-color: rgba(236,72,153,0.2);
-}
-
 .cnb-karta-ikona {
-  width: 2.8rem;
-  height: 2.8rem;
-  min-width: 2.8rem;
-  border-radius: 0.7rem;
-  background: rgba(124,58,237,0.2);
-  border: 1px solid rgba(124,58,237,0.25);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: var(--akcent-svetly);
+  gap: 0.75rem;
+  width: 100%;
 }
 
-.cnb-karta-ikona svg { width: 1.3rem; height: 1.3rem; }
-
-.cnb-karta-obsah h3 {
-  font-family: 'DM Serif Display', serif;
+.cnb-karta-ikona p {
   font-size: 1rem;
+  font-weight: 600;
   color: #fdf9ff;
-  margin-bottom: 0.3rem;
-  line-height: 1.2;
+  text-align: center;
 }
 
-.cnb-ic {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(253,249,255,0.35);
-  margin-bottom: 0.4rem;
+.cnb-karta-ikona img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-stredni);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: var(--stín-karta);
+  object-fit: contain;
 }
 
-.cnb-role {
-  font-size: 0.83rem;
-  color: rgba(253,249,255,0.5);
-  line-height: 1.55;
-  margin-bottom: 1rem;
+/* MOBIL */
+@media (max-width: 700px) {
+  .cnb-sekce { padding: 3rem 1.25rem; }
+
+  .cnb-karty {
+    flex-direction: column;
+  }
+
+  .cnb-karta {
+    flex: 1 1 100%;
+    padding: 1.25rem;
+  }
+
+  .cnb-karta-ikona p {
+    font-size: 1.1rem;
+  }
 }
-
-.cnb-odkaz {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: var(--g-hlavni);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: opacity 0.2s;
-}
-
-.cnb-odkaz svg { flex-shrink: 0; stroke: var(--akcent-svetly); -webkit-text-fill-color: initial; }
-.cnb-odkaz:hover { opacity: 0.75; }
-
-@media (max-width: 1100px) { .cnb-karty { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 700px)  { .cnb-karty { grid-template-columns: 1fr; } .cnb-sekce { padding: 4rem 1.5rem; } }
-
 /* ============================================================
    MATH CAPTCHA
    ============================================================ */
