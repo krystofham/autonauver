@@ -749,7 +749,11 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   flex-shrink: 0;
   transition: opacity 0.2s, transform 0.2s;
 }
-
+@media (max-width: 600px) {
+  .partneri-fb {
+    display: none;
+  }
+}
 .partneri-fb:hover {
   opacity: 0.88;
   transform: scale(1.04);
