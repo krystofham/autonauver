@@ -4,4 +4,3 @@
 # Podstránky
 1) Kontrola faktů
 # Vlnky
-# ENTEDER EL CSS
