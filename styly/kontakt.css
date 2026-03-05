@@ -16,6 +16,11 @@
   margin: 0 auto;
 }
 
+@media (max-width: 900px) {
+  .kontakt-mrizka{
+    grid-template-columns: auto;
+  }
+}
 .kontakt-info h2 {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2rem, 3vw, 2.8rem);
