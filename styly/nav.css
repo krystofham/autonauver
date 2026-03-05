@@ -1,0 +1,174 @@
+/* ============================================================
+   NAVIGACE — plovoucí "pill"
+   ============================================================ */
+.navigace {
+  position: fixed;
+  top: 1rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  width: calc(100% - 4rem);
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.8rem;
+  background: rgba(253,249,255,0.78);
+  backdrop-filter: blur(1px) saturate(190%);
+  border: 1px solid var(--okraj);
+  border-radius: 3rem;
+  box-shadow: var(--stín-karta);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navigace:hover {
+  background: rgba(253,249,255,0.94);
+  box-shadow: var(--stín-hover);
+}
+
+.navigace-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: 0.04em;
+  color: var(--cerna);
+  text-decoration: none;
+}
+
+.navigace-logo span {
+  background: var(--g-hlavni);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navigace-odkazy {
+  display: flex;
+  gap: 0.2rem;
+  list-style: none;
+}
+
+.navigace-odkazy a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--strední);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 2rem;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navigace-odkazy a:hover {
+  color: var(--akcent);
+  background: var(--kremova);
+}
+/* ============================================================
+   JS — NAVIGACE scrollovaný stav + skrytí
+   ============================================================ */
+.navigace {
+  transition: background 0.3s, box-shadow 0.3s, transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+}
+
+.navigace--scrollovana {
+  background: rgba(253,249,255,0.97) !important;
+  box-shadow: 0 4px 32px rgba(124,58,237,0.15) !important;
+}
+
+.navigace--skryta {
+  transform: translateX(-50%) translateY(-120%) !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navigace-odkazy a.aktivni {
+  color: var(--akcent);
+  background: var(--kremova);
+}
+/* ============================================================
+   JS — HAMBURGER (mobil)
+   ============================================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger-cara {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cerna);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
+  transform-origin: center;
+}
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+
+  .navigace-odkazy {
+    display: flex !important;
+    position: fixed;
+    inset: 0;
+    height: 100dvh; /* přesná výška viewportu i na mobilu */
+    background: rgba(8,6,18,0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* rovnoměrně rozdělí prostor */
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.06);
+    transition: opacity 0.35s, transform 0.35s;
+    z-index: 190;
+    box-sizing: border-box;
+  }
+
+  .navigace-odkazy--otevreno {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+
+  .navigace-odkazy a {
+    font-size: 1.4rem;
+    color: var(--bila) !important;
+    padding: 0.5rem 2rem;
+    letter-spacing: 0.1em;
+    background: transparent !important;
+  }
+
+  .navigace-odkazy a:hover { color: var(--akcent-ruzovy) !important; }
+}
+.hamburger.otevreno .hamburger-cara:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.otevreno .hamburger-cara:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.otevreno .hamburger-cara:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ============================================================
+   NAV - externi odkaz (Uver & Leasing)
+   ============================================================ */
+.navigace-odkazy a.nav-externi {
+  color: var(--akcent) !important;
+  background: var(--kremova) !important;
+  border: 1px solid var(--okraj) !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.navigace-odkazy a.nav-externi::after {
+  content: ' \2197';
+  font-size: 0.65em;
+  opacity: 0.7;
+}
+
+.navigace-odkazy a.nav-externi:hover {
+  background: var(--akcent) !important;
+  color: white !important;
+  border-color: var(--akcent) !important;
+}

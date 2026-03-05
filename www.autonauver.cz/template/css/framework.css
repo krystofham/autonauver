@@ -1,0 +1,192 @@
+/*
+Theme Name: AVÍZO CSS Framework
+Description: Základní CSS pro WWW prezentace služby "WWW stránky" na serveru AVÍZO.cz
+Author: AVÍZO, a.s. || http://www.avizo.cz
+*/
+
+
+/* Reset */
+	html,body,div,span,applet,object,iframe,fieldset,form,table {margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;line-height:100%;}
+
+/* Vychozi nastaveni */
+	body {font-family:sans-serif;font-size:0.75em;line-height:1.6em;}
+	address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+	table{border-collapse:collapse;border-spacing:0;}
+	table caption,table th{text-align:center;font-weight:bold;}
+	hr{display:none;}
+	input,textarea{font-family:sans-serif;}
+	abbr,acronym {border-bottom:1px dotted #000;cursor:help;}
+	a img, a:link img, a:visited img {border-style:none;background-color:transparent;text-decoration:none;}
+	form {padding:0;margin:0;}
+	ul, ol {margin-bottom:20px;}
+	li {line-height:1.6em;margin-bottom:10px;}
+	
+/* Obecne */
+	.n {display:none;}
+    .fl-l {float:left;}
+    .fl-r {float:right;}
+    .fl-l50 {float:left;width:48%;}
+    .fl-r50 {float:right;width:48%;}
+	.clr {width:100%;overflow:hidden;clear:both;padding:0;margin:0;}
+
+/* Zakl box model */
+	.page {margin:0 auto;padding:0;overflow:hidden;position:relative;}
+	.header {width:960px;height:200px;margin:0;padding:0;position:relative;overflow:hidden;}
+	.logo, .logo a, .logo a span {display:block;margin:0;padding:0;width:960px;height:200px;overflow:hidden;}
+	.logo {float:left;}
+	.logo a {float:left;position:relative;}
+	.logo a span {position:absolute;top:0;left:0;cursor:pointer;}
+	
+/* Vypis clanku */
+	.flist {width:100%;overflow:hidden;margin:0 0 15px 0;padding:0 0 15px 0;border-bottom:solid 1px #CCC;}
+	.flist-l {margin:0;padding:0;float:left;line-height:1em;text-align:center;}
+	.flist-r {margin:0;padding:0;float:right;text-align:left;overflow:hidden;}
+	.flist-n {margin:0;padding:0;text-align:left;overflow:hidden;width:100%;}
+	.flist h2, .flist h3, .flist h4, .flist h5 {margin:0 0 15px 0;padding:0;font-size:1.6em;font-weight:normal;}
+	.flist-r p, .flist-n p {margin:0 0 8px 0;padding:0;width:100%;overflow:hidden;}
+	.flist-to, .olist-to {color:#666;font-size:0.9em;}
+	.flist-to .ic-time {display:block;padding:2px 0 2px 27px;}
+
+/* Vypis fotogalerie */
+	.gl {margin:0 10px 10px 0;padding:0;width:210px;height:280px;border:solid 1px #000;-moz-border-radius:5px;-webkit-border-radius:5px;float:left;position:relative;background:none;}
+	.gl:hover {background:#CCC;}
+	.gli, p.gli, .gl h2 {position:absolute;width:200px;height:200px;margin:0;padding:0;top:5px;left:5px;line-height:1em;}
+
+	.gl h2 {top:220px;background:none;font-size:12px;text-align:center;line-height:1.2em;}
+
+/* tlacitka */
+	button, button:visited, a.btnc, a.btnc:visited {background:#C8C8C8 url(img/button-overlay.png) repeat-x;display:inline-block;padding:6px;color:#46474A;text-decoration:none;border:none;position:relative;cursor:pointer;font-size:12px;font-weight:bold;line-height:1;text-shadow:none;text-transform:uppercase;border-bottom:1px solid #C3C3C3;border-right:1px solid #D4D4D4;-moz-border-radius-topleft:5px;-moz-border-radius-bottomright:5px;-webkit-border-top-left-radius:5px;-webkit-border-bottom-right-radius:5px;}
+	button:hover, a.btnc:hover {background-color:#111;color:#fff;}
+	button:active, a.btnc:active {top:1px;}
+
+
+/* Vypis inzeratu */
+	.adl {width:100%;overflow:hidden;position:relative;margin:0 0 25px 0;padding:0 0 25px 0;}
+	.adlm {float:left;width:80px;margin:0;padding:0;line-height:1em;}
+	.adli {margin:0;float:right;width:640px;}
+	.adpri {float:right;}
+	.adlt {width:100%;overflow:hidden;}
+	.adlat {float:left;margin:0 30px 0 0;width:auto;font-size:0.9em;line-height:15px;}
+	.adldt {float:left;margin:0;width:auto;font-size:0.9em;}
+	.adldl {float:right;width:auto;}
+
+/****************** DETAIL INZERATU **/
+
+	.adTop {margin:0 0 10px 0;padding:0;font-size:0.9em;width:100%;overflow:hidden;}
+	.ad-type, .ad-date {display:block;margin:0;padding:0;width:auto;float:left;}
+	.ad-date {float:right;}
+
+	.adLeft {margin:0 0 20px 0;padding:0;width:240px;float:left;}
+	.adRight {margin:0 0 20px 0;padding:0;width:375px;float:right;}
+	
+	.adDp {font-size:0.9em;line-height:1.2em;margin:0;}
+	.addet-reg {font-size:0.9em;line-height:1.2em;margin:0;}
+	.ad-text {margin:15px 0;padding:0;line-height:1.6em;font-size:1.2em;clear:both;}
+	
+	.adPrice {font-weight:bold;}
+	.adPrice strong {font-size:1.6em;}
+
+
+	.adContact {padding:0 15px;}
+	.adContact address {font-size:1.2em;font-style:normal;font-weight:bold;width:100%;overflow:hidden;}
+	.adContact address strong {font-weight:normal;}	
+	
+	/* media */
+	
+	#addet-media {width:100%;margin:0 0 30px 0;padding:25px 0 0 0;position:relative;color:#000;}
+    #addet-media h2 {margin:0;padding:0;position:absolute;top:1px;height:23px;font-size:0.95em;z-index:99;border:solid 1px #000;background:transparent;}
+    #addet-media h2 a, #addet-media h2 a:visited {text-decoration:none;}
+    #addet-media h2 a:hover {text-decoration:underline;}
+
+    #addet-video, .addet-photo {border:solid 1px #000;margin:0;padding:10px 0;text-align:center;}
+    #amvid {left:0;} #ampht {left:7em;}
+    * html #amvid {width:6em;} * html #ampht {width:9em;left:7em;}
+    .amt-bk {display:block;padding:0 9px 0 30px;position:relative;height:22px;line-height:23px;}
+    h2#amvid .amt-vl, h2#ampht .amt-vl {display:block;top:0;left:0;width:28px;height:23px;position:absolute;}
+    * html h2#amvid .amt-vr, * html h2#ampht .amt-vr {right:-1px;}
+
+    h2#amvid .amt-vl {background: url(img/film.gif) no-repeat center 3px;} h2#ampht .amt-vl {background: url(img/camera.gif) no-repeat center 4px;}
+
+	#addet-media h2.mactive {border-top:solid 1px #000;border-left:solid 1px #000;border-right:solid 1px #000;border-bottom:solid 1px #fff;}
+    h2.mactive .amt-bk {background:none;}
+    h2.mactive a {font-weight:bold;}
+    h2#amvid.mactive .amt-vl, h2#ampht.mactive .amt-vl {height:20px;position:absolute;}
+    h2#amvid.mactive .amt-vl {background: url(img/film.gif) no-repeat center 3px;} h2#ampht.mactive .amt-vl {background: url(img/camera.gif) no-repeat center 4px;}
+
+    h2.mnone {background:#ccc;color:#999;}
+    h2#amvid.mnone .amt-vl {background:url(img/film-no.gif) no-repeat center 3px;} h2#ampht.mnone .amt-vl {background: url(img/camera-no.gif) no-repeat center 4px;}
+
+
+
+    /*  roller fotografii */
+    .PThumb {height:117px;overflow:hidden;width:100%;padding:0;margin:0;text-align:center;}
+
+    .fotohlav {text-align:center;margin:0;padding:0;line-height:1em;}
+    .bigphoto {margin:2px 0 15px 0;padding:0;text-align:right;}
+    .bigphoto a {padding-right:10px;line-height:1.4em;font-weight:bold;}
+
+    .jcarousel-container {position:relative;}
+    .jcarousel-clip {z-index:2;padding:0;margin:0;overflow:hidden;position:relative;}
+    .jcarousel-list {z-index:1;overflow: hidden;position: relative;top:0;left:0;margin:0;padding:0;}
+    .jcarousel-item {float:left;list-style:none;width:70px;height:70px;}
+    .jcarousel-next {z-index:3;display:none;}
+    .jcarousel-prev {z-index:3;display: none;}
+    .jcarousel-skin-tango .jcarousel-container {width:245px;background: url(img/phtroll.jpg) repeat-x;margin:0 auto;}
+    .jcarousel-skin-tango .jcarousel-container-horizontal {width:245px;padding:13px 40px;}
+    .jcarousel-skin-tango .jcarousel-clip-horizontal {width:245px;height:75px;}
+    .jcarousel-skin-tango .jcarousel-item {width:75px;height:75px;}
+    .jcarousel-skin-tango .jcarousel-item-horizontal {margin-right:10px;}
+    .jcarousel-skin-tango .jcarousel-item-placeholder {background:#fff;color:#000;}
+    .jcarousel-skin-tango .jcarousel-next-horizontal {position:absolute;top:0px;right:0px;width:20px;height: 80px;cursor: pointer;background:transparent url(img/phtrollarrow.jpg) no-repeat 0px -80px;}
+    .jcarousel-skin-tango .jcarousel-next-horizontal:hover {background-position: -20px -80px;}
+    .jcarousel-skin-tango .jcarousel-next-horizontal:active {background-position:-40px -80px;}
+    .jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+    .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+    .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active {cursor:default;background-position: -96px 0;}
+    .jcarousel-skin-tango .jcarousel-prev-horizontal {position:absolute;top:0px;left:0px;width:20px;height:80px;cursor:pointer;background: transparent url(img/phtrollarrow.jpg) no-repeat 0px 0px;}
+    .jcarousel-skin-tango .jcarousel-prev-horizontal:hover {background-position: -20px 0;}
+    .jcarousel-skin-tango .jcarousel-prev-horizontal:active {background-position:-40px 0;}
+    .jcarousel-skin-tango .jcarousel-prev-disabled-horizontal,
+    .jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover,
+    .jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active {cursor:default;background-position: -96px 0;}
+
+
+
+    /* light box */
+    .libox {display:block;position:absolute;top:0;right:0;width:650px;background:#000;z-index:100;}
+    .libox-tools {margin:0;padding:0;height:46px;width:100%;overflow:hidden;position:relative;line-height:40px;font-size:1.4em;color:#fff;font-weight:bold;}
+    .libox-img {margin:0;padding:0 0 5px 0;text-align:center;}
+    .libox-img img {border:solid 1px #fff;}
+    .bigp-left {position:absolute;top:5px;left:5px;cursor:pointer;}
+    .bigp-right {position:absolute;top:5px;left:41px;cursor:pointer;}
+    .bigp-close {position:absolute;top:5px;right:5px;cursor:pointer;}
+	
+/* strankovani */
+    .pagination {margin:15px 0 20px 0;padding:15px 0 0 0;width:100%;text-align:center;}
+    .pagination table  {margin:0 auto;padding:0;width:auto;}
+    .pagination a, .pagination a:visited {text-decoration:underline;;}
+    .pagination a:hover {text-decoration:underline;}
+    .fpage-h, .prpage-h, .nxpage-h, .lpage-h  {color:gray;}
+    .fpage-h, .prpage-h, .fpage, .prpage  {padding:0 20px 0 0;}
+    .nxpage-h, .lpage-h, .nxpage, .lpage  {padding:0 0 0 20px;}
+    a.tpage, a:visited.tpage {font-weight:bold;text-decoration:none;}
+    a:hover.tpage {text-decoration:underline;}
+	
+/* vyhledavaci form */	
+	.tsform {width:100%;margin:0 0 30px 0;padding:0;border-collapse:collapse;}
+	.tsform th {padding:0 5px 0 0;text-align:right;width:130px;font-weight:normal;}
+	
+	
+/* <--------------  formular */
+	.frmbox fieldset {border:none;margin:0 0 60px 0;padding:10px 0 0 0;}
+	.frmbox legend {font-size:1.6em;line-height:1.3em;}
+	.frmbox table {border:none;margin:20px auto;width:100%;}
+	.frmbox table th {border:none;background:none;font-weight:normal;font-size:1em;padding:3px 0 0 0;width:170px;text-align:right;}
+	.frmbox table td {border:none;font-size:1em;}
+	
+	.frmbox label.req {font-weight:bold;}
+	.frmbox label.req span {color:#F00;font-size:1.2em;font-weight:bolder;}
+	.frmbox label.error {font-weight:bold;color:#F00;}
+
+	.formList {margin:0;padding:0;list-style:none;}
+	.formList li {margin:0;padding:0;}

@@ -1,0 +1,174 @@
+/*
+Theme Name: ŠABLONA ANU
+Description: Šablona pro WWW prezentaci služby "WWW stránky" na serveru AVÍZO.cz
+Author: AVÍZO, a.s. || http://www.avizo.cz
+*/
+
+
+	body {padding:0px;margin:0;background:#eeeeee ;width:100%;line-height:1.6em;font-family:sans-serif;color:#2D2D2D;font-size:0.75em;}
+	p {line-height:1.6em;}
+
+/* odkazy */
+	a, a:link, a:active, a:visited      {color:#515151;text-decoration:underline;}
+	a:hover, a:focus                    {color:#717171;text-decoration:underline;}
+    a img, a:link img, a:visited img    {border-style:none;}
+	
+	a.mlink, a.mlink:link, a.mlink:active, a.mlink:visited      {color:#616161;text-decoration:underline;}
+	a.mlink:hover, a.mlink:focus                    {color:#616161;text-decoration:underline;}
+  li {line-height:1.6em;margin-bottom:8px;}
+  ul, ol {margin-bottom:15px;margin-left:0px;padding-left:18px;}
+	
+/* Zakl box model */
+	.page {margin:0px auto;padding:0px;width:870px;background:#48103f;-moz-box-shadow:0px 0px 45px #000000;-webkit-box-shadow:0px 0px 45px #000000;box-shadow:0px 0px 45px #000000;}
+	.pagebox {margin:0;overflow:hidden;background:#fff url(ANU-img/sidebar.png) repeat-y left;position:relative;}
+	.sidebar {margin:0;float:left;min-height:400px;width:200px;padding:8px 0;line-height:1.6em;font-family:sans-serif;color:#000;font-size:1em;}
+	.content {margin:10px 30px 40px 0 ;float:right;width:610px;overflow:hidden;}
+	/* .main {width:100%;overflow:hidden;margin:0 0 0 20px 0;background:url(SUSH-img/main.gif) repeat-y 665px top;} */
+	.footer {margin:20px 0 0 0;padding:30px 0 30px 0;background:#2d2d2d;font-size:0.95em;text-align:left;border-top:solid 0px #363638;width:100%;overflow:hidden;line-height:1.3em;color:#cacaca;}
+  .footer a,.footer a:link,.footer a:active,.footer a:visited {color:#fff;text-decoration:underline;}
+  .footer a:hover,.footer a:focus {color:#717171;text-decoration:underline;}
+  .praveokno {clear: both;border:1px solid #eedaeb;margin:0 0 10px 15px;float:right;width:210px;background:#f8ebf6;padding:15px;line-height:1.6em;font-family:sans-serif;color:#000;font-size:1em;}
+  .zvyraznene {clear: both;float:right;border:1px solid #d7eee2;margin:0 0 10px 15px;float:right;width:210px;background:#e5f5ec;padding:15px;line-height:1.6em;font-family:sans-serif;color:#000;font-size:1em;}
+
+/*  Nadpis webu 	.webTitle a, .webTitle a:visited {color:#000;text-decoration:none;}
+	.webTitle a:hover {color:#900000;text-decoration:none;}
+	*/
+
+
+
+/*  Hlavicka */
+	.header {margin:0;padding:0;width:100%;overflow:hidden;height:280px;}
+	.logo, .logo a, .logo a span {display:block;width:870px;height:280px;}
+	.logo {float:right;background: url(ANU-img/hlavicka.png);}
+ 	.logoANU{margin:30px 0 20px 30px;width:207px;height:49px;background:url(ANU-img/logo.png);}
+	.logoANU a span {display:none;}
+
+/* menu*/
+	ul.mmenu {position:absolute;top:55px;right:40px;width:auto;margin:0;padding:0;display:block;z-index:9119;text-align:right;}
+	.mmenu li {position:relative;margin:0;padding:0;display:block;list-style:none;width:auto;float:left;}
+	.mmenu li a {padding:8px 30px 8px 30px;display:block;color:#c3c3c3;text-decoration:none;cursor:pointer;font-size:1.2em;}
+	.mmenu li.mmenu-end a {border:none;}
+	.mmenu li a:hover {color:#000;text-decoration:none;background:#9e1c86;}
+	.mmenu li.active a {color:#fff;}
+	.mmenu li.active a:hover {background-position:-800px 0px;}
+	.mmenu li span {color:#000;display:block;float:left;height:5px;width:9px;background:url(3005-img/plus.gif) repeat-x scroll 0 0;position:absolute;top:18px;right:10px;}
+	.mmenu li:hover ul, .lnav li:hover div {display:block;}
+	.mmenu ul, .mmenu div {position:absolute;display:none;width:200px;left:0px;top:38px;margin:0px;padding:15px 5px 5px 5px;background:#9e1c86;-moz-box-shadow:  0px 5px 5px #000000;-webkit-box-shadow:  0px 5px 5px #000000;}
+	.mmenu li.active ul, .mmenu li.active div {}
+	.mmenu li div ul {display:block;left:0;position:relative;}
+	.mmenu ul li {float:none;}
+	.mmenu div ul {position:relative;display:block;}
+	.mmenu li li a {width:180px;color:#c3c3c3;float:left;text-decoration:none;background:transparent;padding:5px 10px;text-align: left;}
+	.mmenu li li a:hover {color:#fff;text-decoration:none;background:#48103f;}
+	.mmenu li.active li a {background:transparent;color:#fff;}
+	.mmenu li.active li a:hover {background:#234600;color:#fff;}
+	.mmenu li li.active a {background:#234600;}
+	.mmenu li li.active a:hover {background:#234600;}
+  #nav1 {position:relative;top:0;left:0;width:auto;margin:0;padding:0;display:block;z-index:9119;}
+  #nav1 li a {padding:5px 40px 5px 40px;display:block;width:120px;text-align: left;float:left;color:#d6e4f6;text-decoration:none;cursor:pointer;font-size:1.2em;}
+
+
+
+/* nadpisy */
+    
+	  .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6 {margin:10px 0 10px 0;padding:0;color:#1b3d6b;line-height:1.2em;}
+    .content h1, sidebar h1 {font-size:2em;font-weight:normal;}
+    .content h2, sidebar h2 {font-size:1.5em;font-weight:normal;}
+    .content h3, sidebar h3 {font-size:1.3em;font-weight:normal;}
+    .content h4, sidebar h4 {font-size:1.2em;font-weight:bold;}
+    .content h5, sidebar h5 {font-size:1.1em;font-weight:bold;}
+    .content h6, sidebar h6 {font-size:1em;font-weight:bold;}
+    .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {margin:10px 0 10px 0;padding:0;color:#000;line-height:1.2em;}
+    .footer h1 {margin:0px 0 0px 0;padding:0px;color:#fff;background:none;border-left:none;font-size:1em;font-weight:bold;text-align:left;}
+
+
+	
+/* seznam fotek ve fotogalerii */
+	.fotoList {width:100%;margin:0 0 30px 0;padding:0;list-style:none;overflow:hidden;}
+	.fotoList li {display:block;width:auto;margin:0 20px 20px 0;float:left;}
+	.fotoList li a img, .fotoList li a:visited img  {border:solid 5px #B3A87B;}
+	.fotoList li a:hover img  {border:solid 5px #0D5E8C;}
+	
+	.foto-right {display:block;margin:0 0 4px 0;border-left:1px solid #CCC;float:right;padding:0 0 0 20px;width:200px;text-align:center;}
+	.foto-right .fotoList li {margin:0 0 4px 0;float:right;}
+	.foto-right h2 {font-size:12px;font-weight:bold;margin:0 0 20px 0;padding:0;background:transparent;}
+	
+	.foto-left {display:block;margin:0 0 4px 0;float:left;padding:0;width:370px;}
+  
+  /* boxy */
+  .tmenu {padding:0;position:relative;top:0px;left:10px;width:670px;height:74px; list-style:none;overflow:hidden;border: 0px solid #a0a0a0;}
+	.tmenu li {margin:0;display:inline; }
+	
+	.tmenu li a, .tmenu li a span {display:block;margin:0;padding:0;height:74px;overflow:hidden;border: 0px solid #ff0000;}
+	.tmenu li a {float:left;position:relative;}
+	.tmenu li a span {position:absolute;top:0;left:0px;cursor:pointer;background:url(ANU-img/box6.png) no-repeat 0px 0px;}
+	
+	.tmenu li.tm1 a, .tmenu li.tm1 a span {position:relative;top:0px;left:0px;width:213px;}
+	.tmenu li.tm1 a span, .tmenu li.tm1 a:visited span {background-position:0px -1px;} .tmenu li.tm1 a:hover span {background-position:0px -75px;}
+	.tmenu li.tm1 a.active span, .tmenu li.tm1 a.active:visited span {background-position:0px -130px;} .tmenu li.tm1 a.active:hover span {background-position:0px -195px;}
+	
+	.tmenu li.tm2 a, .tmenu li.tm2 a span {position:relative;top:0px;left:5px;width:213px;}
+	.tmenu li.tm2 a span, .tmenu li.tm2 a:visited span {position:relative;top:0px;left:0px;background-position:-213px -1px;} .tmenu li.tm2 a:hover span {background-position:-213px -75px;}
+	.tmenu li.tm2 a.active span, .tmenu li.tm2 a.active:visited span {background-position:-150px -100px;} .tmenu li.tm2 a.active:hover span {background-position:-127px -195px;}
+	               
+  .tmenu li.tm3 a, .tmenu li.tm3 a span {position:relative;top:0px;left:10px;width:213px;}
+	.tmenu li.tm3 a span, .tmenu li.tm3 a:visited span {position:relative;top:0px;left:0px;background-position:-426px -1px;} .tmenu li.tm3 a:hover span {background-position:-426px -75px;}
+	.tmenu li.tm3 a.active span, .tmenu li.tm3 a.active:visited span {background-position:-150px -100px;} .tmenu li.tm3 a.active:hover span {background-position:-127px -195px;}
+
+
+
+  /* Vypis inzeratu */
+	.adl {background:#f0f0f0;border: 1px solid #c6c6c6;width:580px;overflow:hidden;position:relative;margin:0 0 15px 0;padding:10px 10px 10px 10px;}
+	.adlm {float:left;width:80px;margin:15px 0;padding:0;line-height:1em;}
+	.adli {margin:0;float:left;width:490px;margin:0;padding:0;}
+	.adpri {float:right;font-weight:bold;color:#9a0000}
+	.adlt {width:100%;overflow:hidden;}
+	.adlat {float:left;margin:0 30px 0 0;width:auto;font-size:0.9em;line-height:15px;color:#f0f0f0;}
+	.adldt {float:left;margin:0;width:auto;font-size:0.9em;color:#f0f0f0;}
+	.adldl {float:right;width:auto;}
+
+/****************** DETAIL INZERATU **/
+
+	.adTop {margin:0 0 10px 0;padding:0;font-size:0.9em;width:100%;overflow:hidden;}
+	.ad-type, .ad-date {display:block;margin:0;padding:0;width:auto;float:left;}
+	.ad-date {float:right;}
+
+	.adLeft {margin:0 0 20px 0;padding:0;width:200px;float:left;}
+	.adRight {margin:0 0 20px 0;padding:0;width:375px;float:right;}
+	
+	.adDp {font-size:1em;line-height:1.4em; margin:0;}
+  .adDt {vertical-align:top;font-size:1em;line-height:1.4em; margin:0;width:580px;}
+  .adDt td{vertical-align:top;}
+  .adDt th {text-align:right;vertical-align:top;width:115px;}
+	.addet-reg {font-size:0.95em;line-height:1.2em;margin:0;}
+	/*.ad-text {margin:15px 0;padding:0;line-height:1.6em;font-size:1.2em;width:580px;}*/
+	
+	.adPrice {font-weight:bold;}
+	.adPrice strong {font-size:1.6em;}
+
+
+	.adContact {padding:0 15px;}
+	.adContact address {font-size:1.2em;font-style:normal;font-weight:bold;width:100%;overflow:hidden;}
+	.adContact address strong {font-weight:normal;}	
+  
+     /* <--------------  tabulka */
+  .tabulkap table {border:2px solid #fff;background:#d3def0;}
+  .tabulkap td {border:2px solid #fff;background:#e9eff7;}
+  .tabulkap th {border:2px solid #fff;background:#d3def0;}
+  
+  
+    /* <--------------  formular */
+  .frmbox {border:1px solid #cbcbcb;background:#e7e7e7; margin:50px 0 30px 0;padding:0 20px 0 20px;clear:both;}
+	.frmbox fieldset {border:none;margin:0 0 0 0;padding:10px 0 0 0;}
+	.frmbox legend {font-size:1.6em;line-height:1.3em;}
+	.frmbox table {border:none;margin:20px auto;width:100%;}
+	.frmbox table th {border:none;background:none;font-weight:normal;font-size:1em;padding:3px 0 0 0;width:230px;text-align:right;}
+	.frmbox table td {border:none;font-size:1em; height:30px;}
+	
+	.frmbox label.req {font-weight:bold;}
+	.frmbox label.req span {color:#F00;font-size:1.2em;font-weight:bolder;}
+	.frmbox label.error {font-weight:bold;color:#F00;}
+
+	.formList {margin:0;padding:0;list-style:none;}
+	.formList li {margin:0;padding:0;}
+  #dSouhlas {margin:0 0 0 0px;padding:0;}

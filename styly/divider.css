@@ -1,0 +1,20 @@
+/* ============================================================
+   VLNKA — SVG oddělovač sekcí
+   ============================================================ */
+.vlnka {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+  display: block;
+}
+
+.vlnka svg       { display: block; width: 100%; }
+.vlnka--nahoru   { 
+    margin-bottom: -2px; 
+    background: var(--g-hlavni);
+}
+.vlnka--nahoru svg{fill: var(--bila);}
+.vlnka--dolu svg{fill: var(--g-tmava);}
+
+.vlnka--dolu     { margin-top: -2px;     
+    background-color: var(--bila);}

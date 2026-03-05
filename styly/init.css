@@ -1,0 +1,303 @@
+/* ============================================================
+   RESET & PROMĚNNÉ
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cerna:            #080612;
+  --bila:             #fdf9ff;
+  --kremova:          #f2ecfc;
+  --akcent:           #7c3aed;
+  --akcent-svetly:    #a855f7;
+  --akcent-ruzovy:    #ec4899;
+  --tmava:            #100d1f;
+  --tmava-karta:      #16112b;
+  --strední:          #7a7490;
+  --okraj:            rgba(124, 58, 237, 0.18);
+  --okraj-jemny:      rgba(124, 58, 237, 0.09);
+
+  --g-hlavni:  linear-gradient(135deg, #7c3aed 0%, #a855f7 55%, #ec4899 100%);
+  --g-jemny:   linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(236,72,153,0.08) 100%);
+  --g-tmava:   linear-gradient(160deg, #16112b 0%, #0e0b1e 100%);
+
+  --stín-karta:  0 4px 24px rgba(124,58,237,0.10);
+  --stín-velky:  0 16px 60px rgba(124,58,237,0.15);
+  --stín-hover:  0 8px 40px rgba(124,58,237,0.22);
+
+  --r-velky:   1.5rem;
+  --r-stredni: 0.9rem;
+  --r-maly:    0.5rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bila);
+  color: var(--cerna);
+  overflow-x: hidden;
+}
+/* ============================================================
+   JS — SCROLL ANIMACE
+   ============================================================ */
+.ceka-na-animaci {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22,1,0.36,1) var(--zpozdeni, 0s),
+    transform 0.65s cubic-bezier(0.22,1,0.36,1) var(--zpozdeni, 0s);
+}
+
+.animovano {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   JS — FORMULÁŘ stavy a feedback
+   ============================================================ */
+.pole--chyba {
+  border-color: #e53e3e !important;
+  background: rgba(229,62,62,0.04) !important;
+  box-shadow: 0 0 0 3px rgba(229,62,62,0.12) !important;
+}
+
+.pole--ok {
+  border-color: #48bb78 !important;
+  box-shadow: 0 0 0 3px rgba(72,187,120,0.1) !important;
+}
+
+.chybova-zprava {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: #e53e3e;
+  font-weight: 500;
+}
+
+@keyframes otreseni {
+  0%,100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(8px); }
+  60%      { transform: translateX(-5px); }
+  80%      { transform: translateX(5px); }
+}
+
+.otreseni { animation: otreseni 0.45s ease; }
+
+@keyframes nacitani-rotace {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.nacitani-ikona {
+  animation: nacitani-rotace 0.9s linear infinite;
+}
+
+.formular-uspech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  gap: 1rem;
+  animation: fadeNahoru 0.6s ease both;
+}
+
+.uspech-ikona {
+  width: 4rem;
+  height: 4rem;
+  background: var(--g-hlavni);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(124,58,237,0.4);
+}
+
+.formular-uspech h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+}
+
+.formular-uspech p {
+  color: var(--strední);
+  font-size: 0.95rem;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   JS — POČÍTADLO ZNAKŮ
+   ============================================================ */
+.pocitadlo-znaku {
+  display: block;
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--strední);
+  margin-top: 0.3rem;
+  transition: color 0.2s;
+}
+
+.pocitadlo-znaku--blizko { color: #d69e2e; }
+.pocitadlo-znaku--plno   { color: #e53e3e; font-weight: 600; }
+/* ============================================================
+   JS — ZPĚT NAHORU tlačítko
+   ============================================================ */
+.zpet-nahoru {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 150;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--g-hlavni);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+  opacity: 0;
+  transform: translateY(16px) scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.2s;
+}
+
+.zpet-nahoru--viditelne {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.zpet-nahoru:hover {
+  box-shadow: 0 8px 28px rgba(124,58,237,0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+/* ============================================================
+   JS — PŘEPÍNAČ TMAVÉHO REŽIMU
+   ============================================================ */
+.prepinac-tema {
+  background: var(--kremova);
+  border: 1px solid var(--okraj);
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--akcent);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.prepinac-tema:hover {
+  background: var(--akcent);
+  color: white;
+  box-shadow: 0 4px 14px rgba(124,58,237,0.35);
+  transform: rotate(15deg);
+}
+:root.tmavy-rezim .formular-captcha {
+  background: #1f1838;
+  border-color: rgba(168,85,247,0.15);
+}
+:root.tmavy-rezim .formular-captcha input {
+  background: #2a1f4a;
+  color: var(--cerna);
+  border-color: rgba(168,85,247,0.2);
+}
+
+
+:root.tmavy-rezim {
+  --cerna:       #f0eaff;
+  --bila:        #0d0a1a;
+  --kremova:     #1a1430;
+  --strední:     #9b95b0;
+  --okraj:       rgba(168, 85, 247, 0.2);
+  --okraj-jemny: rgba(168, 85, 247, 0.1);
+  --tmava:       #080612;
+  --g-tmava:     linear-gradient(160deg, #0d0a1a 0%, #080612 100%);
+  --stín-karta:  0 4px 24px rgba(0,0,0,0.5);
+  --stín-velky:  0 16px 60px rgba(0,0,0,0.6);
+  --stín-hover:  0 8px 40px rgba(168,85,247,0.3);
+}
+
+:root.tmavy-rezim body {
+  background: var(--bila);
+  color: var(--cerna);
+}
+
+:root.tmavy-rezim .navigace {
+  background: rgba(13,10,26,0.85) !important;
+  border-color: rgba(168,85,247,0.15);
+}
+
+:root.tmavy-rezim .navigace--scrollovana {
+  background: rgba(13,10,26,0.97) !important;
+}
+
+:root.tmavy-rezim .navigace-logo { color: var(--cerna); }
+
+:root.tmavy-rezim .uvodni-nadpis { color: var(--cerna); }
+:root.tmavy-rezim .sekce-titulek { color: var(--cerna); }
+
+:root.tmavy-rezim .sluzba-karta,
+:root.tmavy-rezim .pobocka-karta,
+:root.tmavy-rezim .kontakt-formular {
+  background: #16112b;
+  border-color: rgba(168,85,247,0.12);
+}
+
+:root.tmavy-rezim .sluzba-nazev { color: var(--cerna); }
+:root.tmavy-rezim .kontakt-formular h3 { color: var(--cerna); }
+:root.tmavy-rezim .kontakt-info h2 { color: var(--cerna); }
+:root.tmavy-rezim .pobocka-karta h3 { color: var(--cerna); }
+:root.tmavy-rezim .pobocka-detail strong { color: var(--cerna); }
+
+:root.tmavy-rezim .formular-skupina label { color: var(--strední); }
+:root.tmavy-rezim .formular-skupina input,
+:root.tmavy-rezim .formular-skupina textarea {
+  background: #1f1838;
+  color: var(--cerna);
+  border-color: rgba(168,85,247,0.15);
+}
+
+:root.tmavy-rezim .formular-skupina input::placeholder,
+:root.tmavy-rezim .formular-skupina textarea::placeholder {
+  color: rgba(155,149,176,0.5);
+}
+
+:root.tmavy-rezim .formular-souhlas { color: var(--strední); }
+
+:root.tmavy-rezim .kontakt-radek-text a,
+:root.tmavy-rezim .kontakt-radek-text span {
+  color: var(--cerna);
+}
+
+:root.tmavy-rezim .uvodni-sekce::before {
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.15) 0%, transparent 70%);
+}
+
+:root.tmavy-rezim .partneri-pruh { background: #1a1430; }
+
+:root.tmavy-rezim .ticker-obal::before {
+  background: linear-gradient(to right, #1a1430, transparent);
+}
+:root.tmavy-rezim .ticker-obal::after {
+  background: linear-gradient(to left, #1a1430, transparent);
+}
+
+:root.tmavy-rezim .kontakt-sekce,
+:root.tmavy-rezim .o-nas {
+  background: #110e22;
+}
+
+:root.tmavy-rezim .pobocky-sekce { background: var(--bila); }
+:root.tmavy-rezim .pobocky-sekce h2 { color: var(--cerna); }
+:root.tmavy-rezim .sekce { background: var(--bila); }
+
+:root.tmavy-rezim .hamburger-cara { background: var(--cerna); }
+:root.tmavy-rezim .prepinac-tema { background: #1a1430; color: var(--akcent-svetly); }
