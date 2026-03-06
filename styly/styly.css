@@ -1990,6 +1990,7 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
      --cerna:            #080612;
      --bila:             #fdf9ff;
      --kremova:          #f2ecfc;
+     --svetla:            #f2ecfc;
      --akcent:           #7c3aed;
      --akcent-svetly:    #a855f7;
      --akcent-ruzovy:    #ec4899;
@@ -2198,6 +2199,7 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
      --cerna:       #f0eaff;
      --bila:        #0d0a1a;
      --kremova:     #1a1430;
+     --svetla:      #cfcfcf;
      --strední:     #9b95b0;
      --okraj:       rgba(168, 85, 247, 0.2);
      --okraj-jemny: rgba(168, 85, 247, 0.1);
@@ -2289,7 +2291,7 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
    ============================================================ */
 .paticka {
   background: var(--tmava);
-  color: rgba(253,249,255,0.45);
+  color: var(--svetla);
   padding: 2.2rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -2300,7 +2302,7 @@ a.sluzba-karta--odkaz:hover .sluzba-vice {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.paticka a { color: rgba(253,249,255,0.45); text-decoration: none; transition: color 0.2s; }
+.paticka a { color: var(--svetla); text-decoration: none; transition: color 0.2s; }
 .paticka a:hover { color: var(--akcent-ruzovy); }
 
 .paticka-logo {
