@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Hlavní sitemap soubor webu
+Sitemap: https://auto-na-uver.cz/map.xml
+
