@@ -6,6 +6,7 @@
 :root {
   /* Barvy */
   --cerna:         #080612;
+  --cerna-slaba:  #282828;
   --bila:          #fdf9ff;
   --kremova:       #f2ecfc;
   --svetla:        #f2ecfc;
@@ -14,7 +15,7 @@
   --akcent-ruzovy: #ec4899;
   --tmava:         #100d1f;
   --tmava-karta:   #16112b;
-  --strední:       #7a7490;
+  --strední:       #282828;
   --okraj:         rgba(124, 58, 237, 0.18);
   --okraj-jemny:   rgba(124, 58, 237, 0.09);
 
@@ -48,10 +49,11 @@ body {
    ============================================================ */
 :root.tmavy-rezim {
   --cerna:         #f0eaff;
+  --cerna-slaba:  #cfcfcf;
   --bila:          #0d0a1a;
   --kremova:       #1a1430;
   --svetla:        #cfcfcf;
-  --strední:       #9b95b0;
+  --strední:       #cfcfcf;
   --okraj:         rgba(168, 85, 247, 0.2);
   --okraj-jemny:   rgba(168, 85, 247, 0.1);
   --tmava:         #080612;
@@ -129,7 +131,7 @@ body {
   justify-content: space-between;
   padding: 0.85rem 1.8rem;
   background: rgba(253,249,255,0.78);
-  backdrop-filter: blur(12px) saturate(190%);
+  backdrop-filter: blur(10px) saturate(190%);
   border: 1px solid var(--okraj);
   border-radius: 3rem;
   box-shadow: var(--stín-karta);
@@ -179,7 +181,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--strední);
+  color: var(--cerna-slaba);
   text-decoration: none;
   padding: 0.45rem 0.9rem;
   border-radius: 2rem;
@@ -459,16 +461,17 @@ body {
     linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 40px 40px;
 }
-
 .auto-pozadi {
   position: absolute;
+  display: flex;
   inset: 0;
-  display: none; /* skryto — lze aktivovat změnou na flex */
   align-items: center;
   justify-content: center;
   z-index: 1;
 }
-
+@media (max-width: 900px) {
+  .auto-pozadi { display: none; }
+}
 /* Statistiky v hero */
 .statistika-karta {
   position: absolute;
