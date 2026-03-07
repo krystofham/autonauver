@@ -5,29 +5,24 @@ Moderní, plně responzivní webová prezentace pro nezávislého finančního p
 ## 🚀 Performance & Metriky
 Tento projekt byl vyvinut s "Performance-first" přístupem. Výsledky měření **Google Lighthouse**:
 
-- **Performance:** 94+ (Mobile) / 99+ (Desktop)
+- **Performance:** 90 (Mobile) / 99 (Desktop)
 - **Accessibility:** 100
 - **Best Practices:** 100
 - **SEO:** 100
-
-### Klíčové optimalizace:
-* **TBT (Total Blocking Time): 0 ms** – JavaScript neblokuje hlavní vlákno prohlížeče.
-* **CLS (Cumulative Layout Shift): 0** – Žádné poskakování obsahu při načítání.
-* **Moderní formáty:** Všechny grafické podklady optimalizovány do formátu **WebP**.
-* **Zero Dependencies:** Čisté HTML/CSS a Vanilla JavaScript bez zbytečných knihoven.
 
 ## 🛠️ Použité technologie
 - **HTML5:** Sémantický kód s důrazem na SEO a přístupnost.
 - **CSS3:** Moderní layouty (Flexbox, Grid), CSS proměnné, Dark Mode support.
 - **Vanilla JavaScript:** Vlastní implementace navigace, filtrů, captchy a animací přes Intersection Observer API.
+### Další technologie
+- Formspree
+- Google Pagespeed insights
 
 ## 📈 Rozvoj projektu
 Projekt vznikl jako reálná zakázka a zároveň "vlajková loď" mého portfolia.
 - [x] Sjednocení CSS do jednoho bundlu pro snížení HTTP requestů.
 - [x] Optimalizace LCP pomocí preloadu kritických assetů.
 - [x] Implementace Dark Mode.
-- [ ] Refaktorizace do **Vite** a **Tailwind CSS**.
-- [ ] Přechod na **React** pro pokročilou správu stavu.
 
 ## 👤 Autor
 **Kryštof Ham**
