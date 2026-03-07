@@ -43,7 +43,12 @@ body {
   color: var(--cerna);
   overflow-x: hidden;
 }
-
+img[alt="auto na uver"] {
+  width: 300px;      /* Nastav si přesně, kolik chceš */
+  height: auto;      /* Výška se dopočítá sama, aby se fotka nedeformovala */
+  object-fit: contain; 
+  opacity: 0.6;
+}
 /* ============================================================
    TMAVÝ REŽIM — přepsání proměnných
    ============================================================ */
