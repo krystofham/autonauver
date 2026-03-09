@@ -277,20 +277,6 @@ function initFormular() {
       });
   });
 }
-/* ============================================================
-   7. PARALLAX
-   ============================================================ */
-function initParallax() {
-  const pravy = document.querySelector('.uvodni-prava');
-  if (!pravy) return;
-
-  // Limit vypočítán jednou, ne při každém scrollu
-  const limit = window.innerHeight * 1.5;
-
-  onScroll(function (y) {
-    if (y < limit) pravy.style.transform = 'translateY(' + (y * 0.15) + 'px)';
-  });
-}
 
 
 /* ============================================================
