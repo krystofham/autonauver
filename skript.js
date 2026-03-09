@@ -405,7 +405,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollAnimace();
   initCitace();
   initFormular();
-  initParallax();
   initPocitadloZnaku();
   initZpetNahoru();
   initTmavyRezim();
