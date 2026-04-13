@@ -185,9 +185,9 @@ function initFormular() {
     odstranitChybu(pole);
     const v = pole.value.trim();
     let zprava = '';
-    if      (pole.required && !v)                           zprava = 'Toto pole je povinne.';
+    if      (pole.required && !v)                           zprava = 'Toto pole je povinné.';
     else if (pole.type === 'email' && v && !emailRe.test(v)) zprava = 'Zadejte platnou e-mailovou adresu.';
-    else if (pole.type === 'tel'   && v && !telRe.test(v))   zprava = 'Zadejte platne telefonni cislo.';
+    else if (pole.type === 'tel'   && v && !telRe.test(v))   zprava = 'Zadejte platné telefonní cislo.';
     if (zprava) { zobrazitChybu(pole, zprava); return false; }
     pole.classList.add('pole--ok');
     return true;
@@ -214,7 +214,7 @@ function initFormular() {
     const souhlas = form.querySelector('#souhlas');
     if (souhlas && !souhlas.checked) {
       platny = false;
-      zobrazitChybu(souhlas, 'Pro odeslani je nutny souhlas.');
+      zobrazitChybu(souhlas, 'Pro odeslaní je nutný souhlas.');
     }
 
     const captchaVstup = form.querySelector('#captcha-odpoved');
@@ -227,7 +227,7 @@ function initFormular() {
         captchaVstup.classList.add('pole--chyba');
         const err = document.createElement('span');
         err.className = 'chybova-zprava';
-        err.textContent = 'Nespravna odpoved. Zkuste znovu.';
+        err.textContent = 'Nespravná odpověď. Zkuste znovu.';
         captchaVstup.parentElement.appendChild(err);
         generujCaptchu();
         captchaVstup.value = '';
@@ -245,7 +245,7 @@ function initFormular() {
 
     const tlacitko = form.querySelector('.tlacitko-hlavni');
     const puvodniHTML = tlacitko?.innerHTML ?? '';
-    if (tlacitko) { tlacitko.textContent = 'Odesilam...'; tlacitko.disabled = true; }
+    if (tlacitko) { tlacitko.textContent = 'Odesílám...'; tlacitko.disabled = true; }
 
     fetch(form.action, {
       method: 'POST',
@@ -262,8 +262,7 @@ function initFormular() {
                 '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>' +
               '</svg>' +
             '</div>' +
-            '<h3>Zprava odeslana!</h3>' +
-            '<p>Dekujeme za vasi poptavku. Ozveme se vam do 24 hodin.</p>' +
+            '<h3>Zpráva odeslána!</h3>' +
           '</div>';
       })
       .catch(function () {
