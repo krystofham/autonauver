@@ -16,11 +16,18 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Auto na Úvěr – Lenka Hamová" />
   <meta name="twitter:description" content="Zprostředkujeme leasing nebo úvěr na auto v Ostravě a okolí. Nezávisle srovnáme nabídky od více finančních partnerů a vybereme nejvýhodnější řešení." />
+    <script>
+  (function() {
+    const ulozeno = localStorage.getItem('tema');
+    if (ulozeno === 'tmavy' || (!ulozeno && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('tmavy-rezim');
+    }
+  })();
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styly/styly.css" />
+  <link rel="stylesheet" href="/styly/styly.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
 </head>
 <body>
