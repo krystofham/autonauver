@@ -1,16 +1,16 @@
-# 🏎️ Auto na Úvěr - Lenka Hamová
-
+# Auto na Úvěr - Lenka Hamová
+> Readme is made heavily with ai.
 Moderní, plně responzivní webová prezentace pro nezávislého finančního poradce specializovaného na autopůjčky a leasing. Postaveno s důrazem na extrémní výkon, čistý kód a uživatelský zážitek.
 
-## 🚀 Performance & Metriky
+## Performance & Metriky
 Tento projekt byl vyvinut s "Performance-first" přístupem. Výsledky měření **Google Lighthouse**:
 
-- **Performance:** 90 (Mobile) / 99 (Desktop)
+- **Performance:** 90 (Mobile) / 98 (Desktop)
 - **Accessibility:** 100
 - **Best Practices:** 100
 - **SEO:** 100
 
-## 🛠️ Použité technologie
+## Použité technologie
 - **HTML5:** Sémantický kód s důrazem na SEO a přístupnost.
 - **CSS3:** Moderní layouty (Flexbox, Grid), CSS proměnné, Dark Mode support.
 - **Vanilla JavaScript:** Vlastní implementace navigace, filtrů, captchy a animací přes Intersection Observer API.
@@ -28,7 +28,6 @@ Projekt vznikl jako reálná zakázka a zároveň "vlajková loď" mého portfol
 **Kryštof Ham**
 - 16 let, Aspiring Frontend Developer
 - Stack: HTML, CSS, JS, Python
-- Cíl: Získání stáže v oboru Web Development
   
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kryštof-ham-bb79533a1)
 
