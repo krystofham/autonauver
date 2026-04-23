@@ -1,5 +1,6 @@
 # Auto na Úvěr - Lenka Hamová
 > Readme is made heavily with ai.
+
 Moderní, plně responzivní webová prezentace pro nezávislého finančního poradce specializovaného na autopůjčky a leasing. Postaveno s důrazem na extrémní výkon, čistý kód a uživatelský zážitek.
 
 ## Performance & Metriky
